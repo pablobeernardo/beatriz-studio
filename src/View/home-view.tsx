@@ -40,31 +40,7 @@ import curso2 from '../assets/curso2.jpg';
 
 
 export default function HomePage() {
-  useEffect(() => {
-    const sections = document.querySelectorAll("section");
-
-    const handleScroll = () => {
-      sections.forEach((section) => {
-        const link = document.querySelector(`.nav-link[href="#${section.id}"]`);
-        const rect = section.getBoundingClientRect();
-
-        if (link) {
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            link.classList.add("active");
-          } else {
-            link.classList.remove("active");
-          }
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+ 
 
   const handleOpenWhatsapp = () => {
     const phoneNumber = '+5524992737045';
@@ -76,23 +52,28 @@ export default function HomePage() {
       <NavbarContainer>
         <NavList>
           <NavItem>
-            <NavLink href="#Sobre" className="nav-link">
+            <NavLink to="Sobre" smooth={true} duration={500} className="nav-link">
               Quem Sou Eu
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#Servicos" className="nav-link">
-              Nossos Serviços
+            <NavLink to="Servicos" smooth={true} duration={500} className="nav-link">
+              Serviços
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#Cursos" className="nav-link">
+            <NavLink to="Loja" smooth={true} duration={500} className="nav-link">
+              Loja
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="Cursos" smooth={true} duration={500} className="nav-link">
               Cursos
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#Contato" className="nav-link">
-              Entre em Contato
+            <NavLink to="Contato" smooth={true} duration={500} className="nav-link">
+              Contato
             </NavLink>
           </NavItem>
         </NavList>
@@ -174,7 +155,7 @@ export default function HomePage() {
           href="https://goo.gl/maps/NHAb6i5cTyYKZzMM6"
           target="_blank"
           rel="noopener noreferrer"
-          style={{textDecoration: 'none'}}
+          style={{ textDecoration: 'none' }}
         >
           Ver no Google Maps
         </a>

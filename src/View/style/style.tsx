@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import Slider from 'react-slick';
+import {Link as ScroolLink} from 'react-scroll';
 
 const fadeIn = keyframes`
   from {
@@ -238,13 +239,11 @@ export const Footer = styled.footer`
 `;
 
 export const NavbarContainer = styled.nav`
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
 
   @media (max-width: 768px) {
     padding: 10px;
@@ -255,9 +254,9 @@ export const NavList = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
-  padding: 0;
   list-style: none;
+  padding: 0;
+  margin: 0;
 `;
 
 export const NavItem = styled.li`
@@ -267,11 +266,12 @@ export const NavItem = styled.li`
   }
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled(ScroolLink)`
 position: relative;
 text-decoration: none;
 color: #555;
 transition: color 0.3s ease-in-out;
+cursor: pointer;
 
 &.active {
   color: rgb(207, 175, 132);
@@ -289,6 +289,15 @@ transition: color 0.3s ease-in-out;
   transform-origin: right;
   transition: transform 0.3s ease-in-out;
 }
+
+&:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  font-size: 14px;
+}
+
 `;
 
 export const CoursesSection = styled.section`

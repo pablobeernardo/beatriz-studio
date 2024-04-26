@@ -123,53 +123,24 @@ export const Service = styled.div`
   }
 `;
 
+
 export const Carousel = styled(Slider)`
+  .slick-slide {
+    margin: 0 10px;
+  }
+
   .slick-prev,
   .slick-next {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+    color: rgb(207,175,132);
   }
 
-  .slick-prev {
-    left: -20px;
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px;
   }
   
-  .slick-next {
-    right: -20px;
-  }
-
-  .slick-dots {
-    bottom: 10px;
-
-    li {
-      button {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.3);
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.5);
-        }
-      }
-    }
-  }
 `;
+
 
 export const InstagramSection = styled.section`
   display: flex;
@@ -366,3 +337,87 @@ export const CourseDescription = styled.p`
   }
 `;
 
+export const GalleryContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+`;
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+  
+`;
+
+export const ModalContent = styled.div`
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: hidden;
+
+  @media(min-width: 768px) {
+    overflow: auto;
+  
+`;
+
+export const CloseButton = styled.span`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1;
+`;
+
+export const ModalImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  @min-width (max-width: 768px) {
+    width: 100%;
+    object-fit: cover;
+  }
+`;

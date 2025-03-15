@@ -1,39 +1,44 @@
-import { AboutMeSection, TitleMe, DescriptionMe, CourseList, CourseItem, CourseTitle, CourseDescription } from "../style/style";
-import curso1 from '../../assets/curso1.jpg';
-import curso2 from '../../assets/curso2.jpg';
+import {
+    AboutMeSection,
+    TitleMe,
+    MissionValuesSection,
+    MissionValuesCard,
+    MissionValuesDescription,
+    ImageCard,
+    DescriptionMe
+} from "../style/style";
+import experienciaImg from '../../assets/curso1.jpg';  
+import missionImg from '../../assets/valor2.png';     
 
 export default function Sobre() {
     return (
         <AboutMeSection id='Sobre'>
-            <TitleMe>Quem Sou Eu</TitleMe>
-            <DescriptionMe>
-                Olá! Sou Beatriz, uma entusiasta apaixonada pelo mundo do design de unhas. Com anos de experiência como Nail Designer, mergulhei de cabeça na arte de transformar unhas em telas elegantes e expressivas. Minha jornada começou com uma paixão por cores, texturas e formas, e desde então venho refinando minhas técnicas para oferecer a você um serviço de manicure único.
-                <br />
-                <br />
-                Meu objetivo é criar um espaço onde cada cliente possa se sentir verdadeiramente especial. Não se trata apenas de unhas, mas de proporcionar uma experiência que eleve sua autoestima e estilo. Minhas criações vão além do esmalte e se tornam verdadeiras declarações artísticas. Trabalho com dedicação para transformar sua visita em momentos de puro encantamento.
-                <br />
-                <br />
-                A cada pincelada, busco capturar a essência e personalidade de cada cliente. Cada detalhe é uma oportunidade de expressão criativa, e eu adoro explorar novas tendências e técnicas para garantir que você saia com unhas que são uma extensão autêntica de quem você é.
-                <br />
-                <br />
-                Convido você a agendar um horário e mergulhar no mundo do design de unhas comigo. Vamos juntas transformar suas unhas em uma tela em branco para a criatividade e a beleza!
-            </DescriptionMe>
-            <CourseList>
-                <CourseItem>
-                    <img src={curso2} alt="Manicure" />
-                    <CourseTitle>Nail Designer</CourseTitle>
-                    <CourseDescription>
-                        Formada em Estética e Cosmética, com especialização em Nail Art, sou apaixonada por unhas e design. Meu objetivo é proporcionar a você uma experiência única e personalizada, com unhas que refletem sua personalidade e estilo.
-                    </CourseDescription>
-                </CourseItem>
-                <CourseItem>
-                    <img src={curso1} alt="Manicure" />
-                    <CourseTitle>Beatriz Pereira</CourseTitle>
-                    <CourseDescription>
-                        Sempre procurando inovar e aprimorar minhas habilidades, estou sempre em busca de novos cursos e tendências para oferecer a você o melhor em design de unhas. Agende um horário e descubra o que posso fazer por você!
-                    </CourseDescription>
-                </CourseItem>
-            </CourseList>
+            <MissionValuesSection>
+                <MissionValuesCard>
+                    <MissionValuesDescription>
+                        <TitleMe>Minha História</TitleMe>
+                        <DescriptionMe>
+                            Olá! Sou Beatriz, uma entusiasta apaixonada pelo mundo do design de unhas. Com anos de experiência como Nail Designer, minha jornada começou com uma paixão por cores, texturas e formas. Desde então, tenho refinado minhas técnicas para proporcionar a você uma experiência única, que vai além da manicure.
+                            Com mais de 5 anos de atuação no mercado de design de unhas, participei de diversos cursos e eventos, sempre buscando o aperfeiçoamento contínuo. Minha experiência inclui atender clientes com diferentes necessidades e preferências, personalizando o serviço conforme seu estilo e personalidade.
+                        </DescriptionMe>
+                    </MissionValuesDescription>
+                    <ImageCard src={experienciaImg} alt="Minha História" />
+                </MissionValuesCard>
+            </MissionValuesSection>
+
+            <MissionValuesSection>
+                <MissionValuesCard>
+                    <MissionValuesDescription>
+                        <TitleMe>Missão e Valores</TitleMe>
+                        <DescriptionMe>
+                            Minha missão é proporcionar uma experiência transformadora e única, onde cada cliente se sinta especial e confiante. Quero que cada visita seja uma oportunidade de criar algo exclusivo e belo.
+                            Trabalho com dedicação, ética e respeito. Acredito que cada cliente merece um atendimento personalizado, e cada detalhe importa. A confiança e a satisfação de quem me escolhe é o que me motiva a continuar evoluindo na profissão.
+                        </DescriptionMe>
+                    </MissionValuesDescription>
+                    <ImageCard src={missionImg} alt="Missão e Valores" />
+                </MissionValuesCard>
+            </MissionValuesSection>
+
         </AboutMeSection>
-    )
+    );
 }

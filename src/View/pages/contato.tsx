@@ -1,6 +1,6 @@
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ContactSection, TitleMe, ContactButton, InstagramSection, InstagramLink, Footer } from "../style/style";
+import { ContactSection, TitleMe, ContactButton, InstagramSection, InstagramLink, Footer, DescriptionMe } from "../style/style";
 
 interface Props{
     handleOpenWhatsapp: () => void;
@@ -12,16 +12,16 @@ export default function Contato(props: Props) {
         <footer>
             <ContactSection id='Contato'>
                 <TitleMe>Entre em Contato</TitleMe>
-                <p>Rua Presidente Vargas, 269 - Centro - Três Rios - RJ</p>
+                <DescriptionMe>Galeria Martha Dutra, Praça São Sebastião - Três Rios, RJ, 25804-080</DescriptionMe>
                 <a
-                    href="https://goo.gl/maps/NHAb6i5cTyYKZzMM6"
+                    href="https://maps.app.goo.gl/8WPaojMcKgxnfTnF9"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ textDecoration: 'none' }}
                 >
                     Ver no Google Maps
                 </a>
-                <p>Agende um horário e realce a sua beleza.</p>
+                <DescriptionMe>Agende um horário e realce a sua beleza.</DescriptionMe>
                 <ContactButton onClick={props.handleOpenWhatsapp}>Agendar Agora</ContactButton>
             </ContactSection>
 
@@ -33,7 +33,7 @@ export default function Contato(props: Props) {
             </InstagramSection>
 
             <Footer>
-                <p>&copy; 2023 Studio de Nail Designer. Todos os direitos reservados.</p>
+                <DescriptionMe>&copy; 2025 Studio de Nail Designer. Todos os direitos reservados.</DescriptionMe>
             </Footer>
         </footer>
     )

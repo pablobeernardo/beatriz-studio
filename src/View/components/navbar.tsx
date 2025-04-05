@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { NavbarContainer, NavList, NavItem, NavLink } from '../style/style';
+import { NavbarContainer, NavList, NavItem } from '../style/style';
+import { Link as ScrollLink } from 'react-scroll'; // Importa o Link do react-scroll
+import { Link as RouterLink } from 'react-router-dom'; // Importa o Link do react-router-dom
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,34 +17,46 @@ const Navbar = () => {
             </button>
             <NavList className={isMenuOpen ? 'open' : ''}>
                 <NavItem>
-                    <NavLink to="Sobre" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+                    <ScrollLink to="Sobre" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
                         Início
-                    </NavLink>
+                    </ScrollLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="Studio" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+                    <ScrollLink to="Studio" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
                         Studio
-                    </NavLink>
+                    </ScrollLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="Servicos" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+                    <ScrollLink to="Servicos" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
                         Serviços
-                    </NavLink>
+                    </ScrollLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="Loja" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+                    <ScrollLink to="Loja" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
                         Loja
-                    </NavLink>
+                    </ScrollLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="Fotos" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+                    <ScrollLink to="Fotos" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
                         Fotos
-                    </NavLink>
+                    </ScrollLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="Contato" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+                    <ScrollLink to="Contato" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
                         Contato
-                    </NavLink>
+                    </ScrollLink>
+                </NavItem>
+
+                {/* Aqui é o LOGIN que muda de página */}
+                <NavItem>
+                    <RouterLink
+                        to="/login"
+                        onClick={() => setIsMenuOpen(false)}
+                        style={{ textDecoration: 'none', color: 'inherit' }} // Só pra manter o estilo igual
+                        target='_blank'
+                    >
+                        Painel
+                    </RouterLink>
                 </NavItem>
             </NavList>
         </NavbarContainer>

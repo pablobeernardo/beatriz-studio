@@ -42,6 +42,8 @@ import Loja from './pages/loja';
 import Contato from './pages/contato';
 import Studio from './pages/studio';
 import Trabalhos from './pages/galeria';
+import { AgendamentoProvider } from './components/AgendamentoContext';
+import PainelAdmin from './components/painel-admin';
 
 
 
@@ -55,18 +57,20 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar />
-      <Container>
-        <Header>
-          <img src={logomarca} alt='logomarca' />
-        </Header>
-        <Sobre />
-        <Studio />
-        <Servicos />
-        <Loja />
-        <Trabalhos />
-        <Contato handleOpenWhatsapp={handleOpenWhatsapp} />
-      </Container>
+      <AgendamentoProvider>
+        <Navbar />
+        <Container>
+          <Header>
+            <img src={logomarca} alt='logomarca' />
+          </Header>
+          <Sobre />
+          <Studio />
+          <Servicos />
+          <Loja />
+          <Trabalhos />
+          <Contato handleOpenWhatsapp={handleOpenWhatsapp} />
+        </Container>
+      </AgendamentoProvider>
     </>
   );
 }
